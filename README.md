@@ -151,25 +151,7 @@ The dataset (fraud_oracle.csv) includes the following fields:
 ## Dataset Access Link, Preparation, Necessary Cleaning and Exploratory Data Analysis
 ========================================================================================
 
-Our exploratory data analysis (EDA) process consists of three main steps. Firstly, we download the dataset from the UCI Machine Learning Repository (https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset). Secondly, we examine the dataset's structure and contents, checking for duplicated rows, columns, and missing values. In the third step, we analyze and visualize the data to gain insights into its distribution and identify correlations between variables and the target variables ('cnt', 'casual', and 'registered'). 
-
-Here are some key observations from the EDA:
-
-- The columns 'month' and 'season' exhibit a strong positive correlation.
-- Features 'temp' and 'atemp' are highly correlated.
-- The columns 'registered', 'cnt', and 'casual' show a high positive correlation with each other.
-- The variables 'casual', 'registered', and 'cnt' demonstrate a notably strong right-skewed distribution.
-- On average, the number of bikes rented by casual users is lower than that of registered users over the two years.
-- There is a noticeable increase in the number of registered bike rentals from 2011 to 2012, while the increase in casual rentals during the same period is relatively small.
-- During the spring and summer seasons, the average number of bike rentals is higher for both casual and registered users compared to the winter and fall seasons.
-- The average number of rental bikes during the first and last months of the year is lower compared to the other months for both casual and registered users.
-- The average number of rental bikes for registered users surpasses that of casual users in general.
-- At the beginning and end of the week, the average number of rentals is higher compared to the middle of the week. However, this pattern is opposite for registered users.
-- For casual users, the average number of rentals is lower on working days than on non-working days. Conversely, this behavior is opposite for registered users.
-- The mean number of rentals for both casual and registered users, as well as the 'cnt' variable, shows a decreasing trend as the values of weather situations increase.
-- All the columns are significantly correlated with the three types of rental bikes (casual/registered/cnt).
-
-These insights will guide our subsequent modeling and analysis efforts, helping us make informed decisions based on the patterns and relationships identified during the EDA process.
+To be completed ...
 
 ========================================================================================
 ## Baseline Fraud Detection System
