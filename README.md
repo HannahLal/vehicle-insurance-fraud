@@ -15,7 +15,7 @@ algorithms and models that can automatically detect suspicious activities throug
 ## Project Organization
 ========================================================================================
     
-    ├── README.md                           <- The main README document for developers utilizing this project.
+    ├── README.md                              <- The main README document for developers utilizing this project.
     |
 	├── presentations				        <- The folder containing all notebooks for every sprint of the project
     |   ├── EDA_Presentation.pdf               <- Sprint 1 presentation of the project on Performing EDA on raw dataset
@@ -27,7 +27,7 @@ algorithms and models that can automatically detect suspicious activities throug
     |   ├── exploratory_data_analysis.ipynb    <- Project notebook 1 - data preparation and exploration
     |   ├── ...						           <- To be implemented ...
     |
-    ├── app                                 <- The folder containing all trained models to be saved. To be completed ...
+    ├── models                                 <- The folder containing all trained models to be saved. To be completed ...
  
 
 ========================================================================================
