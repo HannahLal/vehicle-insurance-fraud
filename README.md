@@ -10,6 +10,7 @@ safeguarding policyholders. Given its significant impact, insurance fraud detect
 research area in data science and machine learning. This capstone project aims to concentrate on identifying and 
 preventing fraudulent or misleading insurance claims using the dataset available at Kaggle. The objective is to develop 
 algorithms and models that can automatically detect suspicious activities through historical data analysis. 
+
 ========================================================================================
 ## Project Organization
 ========================================================================================
