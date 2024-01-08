@@ -151,22 +151,76 @@ The dataset (fraud_oracle.csv) includes the following fields:
 ## Dataset Access Link, Preparation, Necessary Cleaning and Exploratory Data Analysis
 ========================================================================================
 
-To be completed ...
+Link to dataset: https://www.kaggle.com/datasets/shivamb/vehicle-claim-fraud-detection/data 
+
+EDA Insights: 
+
+FraudFound_P:
+
+1. Month, WeekOfMonth, MonthClaimed, WeekOfMonthClaimed, Sex, Dedictible, DriverRating, AddressChange_Claim and Vehicle_Price are positively correlated with our target variable FraudFound_P.
+
+2. DayOfWeek, AccidentArea, DayOfWeekClaimed, MaritalStatud, Age, RepNumber, PoliceReportFiled, WitnessPresent, Year, Age of Vehicle and Number of suppliments are negatively correlated with our target variable FraudFound_P.
+
+Fault:
+
+1. Month, AccidentArea, MonthClaimed, WeekOfMonthClaimed, Sex, PoliceReportFiled, WitnessPresent, AddressChange_Claim, Year, Age of Vehicle and Number of suppliments are positively correlated with Fault variable.
+
+2. WeekOfMonth, DayOfWeek, DayOfWeekClaimed, MaritalStatud, Age, RepNumber, Dedictible, DriverRating, Vehicle_Price and Past Number of Claims are negatively correlated with Fault Variable.
+
+3. Month, MonthClaimed, Year and PastClaims are the predictors with higher correlation with the FraudFound_P target variable. WitnessPresent, Vehicle_Price and PastClaims are the predictors with higher correlation with the Fault variable.
 
 ========================================================================================
 ## Baseline Fraud Detection System
 ========================================================================================
 
-To be completed ...
+For our baseline modeling we will be using the logistic regression and decision tree models having the FraudFound_P column as our target variable to predict its values given all the other columns as its independent variables.
+
+Baseline modeling Insights: 
+
+1. Class 0: 
+a) Percision: 0.99: Meaning When the model predicts class 0, it is correct 99% of the time
+b) Recall: 0.59: Meaning the model captures 59% of the actual instances of class 0
+c) F1-Score: 0.74
+
+2. Class 1:
+a) Percision: 0.12: Meaning when the model predicts class 1, it is correct only 12% of the time
+b) Recall: 0.92: Meaning the model is effective at capturing 92% of the actual instances of class 1
+c) F1-Score: 0.22
+
+3. Overall:
+a) Accuracy: 0.61: The overall accuracy of the model is 61%
+b) Macro avg (precision, recall, F1-score): 0.56, 0.75, 0.48
+c) Weighted avg (precision, recall, F1-score): 0.94, 0.61, 0.71
+d) Precision and Recall:
+
+4. Percision for class 1: When the model predicts fraud (class 1), it is correct only 12.5% of the time
+a) Recall for class 1: The model captures 91.9% of the actual instances of fraud
+b) ROC AUC Score:
+c) ROC AUC (Receiver Operating Characteristic Area Under the Curve) is a measure of the model's ability to distinguish between positive and negative classes. A score of 0.806 indicates relatively good performance. The closer the score is to 1, the better the model is at distinguishing between the two classes. What this means is that, the model shows a good ability to discriminate between the two classes as indicated by the ROC AUC score.
+
+5. The precision for non-fraud (class 0) remains high, suggesting that when the model predicts non-fraud, it is usually correct.
+a) The recall for fraud (class 1) is high, indicating that the model is effective at capturing innstances of fraud.
+b) The F1-score provides a balance between precision and recall.
+
+
+One recommendation to make the model better, is to adjust the model threshold and continue monitoring and fine-tuning the model based on our specific requirements for this application. We can also consider exploring other models or techniques to further improve performance, especifically due to the fact that not being able to detect fraudulent claims is a very costly miss on our side.
+
 
 ========================================================================================
 ## Modeling
 ========================================================================================
 
-To be completed ...
+For model enhancement purposes, since the dataset is highly imbalanced, we will first apply SMOTE method to resample the data, then we will fit this resampled data into our baseline models and finally we will be using hyperparameter optimization and ensemble methods like xgboost, gradient boosting and bagging/random forests to further improve the performance of our models. For our evaluation metrics we will be considering different metrics such as precision, recall, and f1 score and we will be plotting confusion matrix and ROC curves and displaying the classification reports.
+
+Some insights: 
+
+We can conclude that training a logistic regression model and applying LogReg with k-fold cross validation and GridSearchCV on the features set indicates that fault and vehicle_category_sport are the two most indicating features in our logistic regression model. And PolicyType_2 and PolicyType_1 along with Address_Change_Claim and Base_Policy_Liability stand in the second place as contributors to this model. 
 
 ========================================================================================
 ## Conclusion
 ========================================================================================
 
-To be completed ...
+
+Finally, we will compare different trained models with each other and specifically analyse important features for each model and draw some conclusions.
+
+Based on the trained models, Logistic Regression combined with GridSearchCV and StratifiedKFold performed best on the features extracted from the original dataset. 
